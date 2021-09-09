@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Banking Solutions</title>
+    <style>
+        #main
+        {
+            width:600px;
+            height:600px;
+            border:1px solid white;
+            margin:0 auto;
+            margin-top:100px;
+        }
+        #main h1
+        {
+         text-align:center;
+        color:white;
+        }
+        #main form
+        {
+        text-align:center;
+        color:white;
+        }
+
+
+    </style>
+</head>
+<body style="background-image:url('{% static "images/back3.jpg" %}');">
+<div id="main">
+    <h1>New Account Form</h1>
+      <hr/>
+<form action="{% url 'saveuser' %}" method="post">
+    {% csrf_token %}
+    Enter Account No (Unique)
+    <input type="number" name="acno"/> <br/><br/>
+    Enter Full Name
+    <input type="text" name="name"/> <br/><br/>
+    Enter Gender
+    <input type="text" name="gender"/> <br/><br/>
+    Enter Address
+    <input type="text" name="address"/> <br/><br/>
+    Enter Date Of Birth
+    <input type="date" name="dob"/> <br/><br/>
+    Enter Contact No
+    <input type="number" name="contactno"/> <br/><br/>
+    Enter Email Address
+    <input type="email" name="emailaddress"/> <br/><br/>
+    Enter PAN Number
+    <input type="text" name="panno"/> <br/><br/>
+    Enter Aadhar Number
+    <input type="number" name="aadharno"/> <br/><br/>
+    Enter Balance
+    <input type="number" name="balance"/> <br/><br/>
+    Enter Opening Date
+    <input type="date" name="openingdate"/> <br/><br/>
+    Enter Password
+    <input type="password" name="password"/> <br/><br/>
+    <input type="submit" value="Register"/>
+</form>
+</div>
+
+</body>
+</html>

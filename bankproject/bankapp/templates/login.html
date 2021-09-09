@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+
+          #main
+        {
+            width:400px;
+            height:200px;
+            border:1px solid white;
+            margin:0 auto;
+            margin-top:100px;
+        }
+        #main h1
+        {
+         text-align:center;
+        color:white;
+        }
+        #main form
+        {
+        text-align:center;
+        color:white;
+        }
+    </style>
+</head>
+<body style="background-image:url('{% static "images/background.jpeg" %}');">>
+<div id="main">
+    <h1>Login Here</h1>
+    {% if msg %}
+    <p style="color:white;text-align:center;">{{ msg }}</p>
+    {% endif %}
+<form action="{% url 'logcode' %}" method="post">
+    {% csrf_token %}
+    Enter Account No
+    <input type="number" name="acno"/> <br/><br/>
+     Enter Password
+    <input type="password" name="password"/> <br/><br/>
+    <tr>
+        <td style="color:white">Select Operation</td>
+        <td>
+            <select name="op">
+                <option value="deposit">Deposit Amount</option>
+                <option value="withdraw">Withdraw Amount</option>
+                <option value="enquiry">Balance Enquiry</option>
+
+            </select>
+        </td>
+    </tr>
+    <input type="submit" value="Login"/>
+</form>
+</div>
+</body>
+</html>

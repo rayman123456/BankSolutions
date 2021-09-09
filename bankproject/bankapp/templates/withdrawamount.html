@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw Money</title>
+    <style>
+        #main
+        {
+            width:400px;
+            height:200px;
+            border:1px solid white;
+            margin:0 auto;
+            margin-top:100px;
+        }
+        #main h1
+        {
+         text-align:center;
+        color:white;
+        }
+        #main form
+        {
+        text-align:center;
+        color:white;
+        }
+    </style>
+</head>
+<body style="background-image:url('{% static "images/back2.jpg" %}');">
+<div id="main">
+    <h1>Withdraw Money Form</h1>
+    {% if msg%}
+        <p style="color"red;text-align:center;>{{msg}}</p>
+    {% endif%}
+    <hr/>
+    <form action="{% url 'withdrawamt' %}" method="post">
+        {% csrf_token %}
+    Enter Amount To Be Withdrawn
+    <input type="number" name="amt"/> <br/><br/>
+        <input type="submit" value="Confirm"/>
+    </form>
+</div>
+
+</body>
+</html>

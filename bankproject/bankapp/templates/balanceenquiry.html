@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Balance Enquiry</title>
+    <style>
+        #main
+        {
+            width:400px;
+            height:200px;
+            border:5px solid white;
+            margin:0 auto;
+            margin-top:100px;
+        }
+        #main h1
+        {
+         text-align:center;
+        color:white;
+        }
+
+    </style>
+</head>
+<body style="background-image:url('{% static "images/back2.jpg" %}');">
+<div id="main">
+    <h1>Balance Enquiry Form</h1>
+     {% if msg %}
+    <p style="color:white;text-align:center;border:3px solid white;font-size:30px;">{{msg}}</p>
+    {% endif%}
+
+
+</div>
+
+</body>
+</html>

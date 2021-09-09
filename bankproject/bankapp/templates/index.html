@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Banking Solutions!</title>
+    <style>
+        #main
+        {
+            width:320px;
+            height:270px;
+            border:1px solid white;
+            margin:0 auto;
+            margin-top:100px;
+        }
+        #main h1
+        {
+        text-align:center;
+        color:white;
+        }
+        .mybtn
+        {
+        background-color:white;
+        border:2px solid black;
+        color:black;
+        text-align:center;
+        font-size:20px;
+        width:300px;
+        cursor:pointer;
+
+        }
+
+
+    </style>
+
+</head>
+<body style="background-image:url('{% static "images/background.jpeg" %}');">
+<div id="main">
+    <h1>Bank of India</h1>
+    {% if msg%}
+    <p style="color:white;text-align:center;">{{msg}}</p>
+    {% endif%}
+    <table style="margin:0 auto;width:50%;margin-top:50px">
+        <tr>
+            <td><button class="mybtn" onclick="window.location.href ='{% url "createaccount" %}'">Create New Account</button></td>
+            </tr>
+            <tr>
+                <td><button class="mybtn" onclick="window.location.href ='{% url "login" %}'">Deposit Amount</button></td>
+                </tr>
+            <tr>
+                <td><button class="mybtn" onclick="window.location.href ='{% url "login" %}'">Withdraw Amount</button></td>
+                </tr>
+            <tr>
+                <td><button class="mybtn" onclick="window.location.href ='{% url "login" %}'">Balance Enquiry</button></td>
+        </tr>
+
+
+
+
+
+
+    </table>
+
+</div>
+</body>
+</html>
